@@ -1,0 +1,57 @@
+@import "../../MainStyles";
+@import "../../breakpoints/breakpoints.scss";
+
+.favorites__main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding-top: 100px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+//No User Favorites Screen
+.empty__favorites {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  .favorites__title {
+    font-family: fontMed;
+    width: fit-content;
+    font-size: 1.2rem;
+  }
+  .favorites__signIn {
+    margin-top: 50px;
+    @include centerContent;
+  }
+  .noFavorites {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  @include media(">=smallLT") {
+    .favorites__title {
+      font-size: 1.4rem;
+    }
+  }
+}
+//User logged in Favorites screen
+.favorites__items__holder {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  row-gap: 50px;
+  justify-items: center;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+  @include media(">=tablet") {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  @include media(">=smallLT") {
+    grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+  }
+}

@@ -1,0 +1,146 @@
+@import "../../MainStyles";
+@import "../../breakpoints/breakpoints.scss";
+
+.favorite__main {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: auto;
+  @include media(">=tablet") {
+    width: 300px;
+  }
+  @include media(">=smallLT") {
+    width: 410px;
+  }
+}
+.favorite__image__container {
+  width: 100%;
+  height: 200px;
+  background-color: #ecebe9;
+  cursor: pointer;
+  @include centerContent;
+  .favorite__image {
+    width: 110px;
+    height: 110px;
+    pointer-events: none;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .favorite__imageLg {
+    pointer-events: none;
+    width: 120px;
+    height: 120px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  @include media(">=tablet") {
+    height: 300px;
+    .favorite__image {
+      width: 150px;
+      height: 150px;
+    }
+    .favorite__imageLg {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  @include media(">=smallLT") {
+    height: 430px;
+    .favorite__image__container {
+      height: 200px;
+    }
+    .favorite__image {
+      width: 200px;
+      height: 200px;
+    }
+    .favorite__imageLg {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+//Item info section
+.favorite__item__info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 95px;
+  @include media(">=smallLT") {
+    height: 120px;
+  }
+}
+.left__item__info {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  :nth-child(1) {
+    font-family: fontMed;
+    font-size: 1rem;
+    @include media(">=smallLT") {
+      font-size: 1.2rem;
+    }
+  }
+  :nth-child(2) {
+    color: #939393;
+  }
+  div {
+    width: 100px;
+    height: 40px;
+    border: solid thin #000;
+    background-color: transparent;
+    border-radius: 30px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    @include centerContent;
+    @include media(">=smallLT") {
+      width: 140px;
+      height: 55px;
+      font-size: 16.2px;
+    }
+  }
+}
+.right__item__info {
+  padding-top: 10px;
+  position: relative;
+  span {
+    font-size: 1rem;
+  }
+  .item__SVG__container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    @include centerContent;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    right: 0;
+    .item__SVG {
+      width: 15px;
+      height: 15px;
+    }
+    @include media(">=smallLT") {
+      width: 40px;
+      height: 40px;
+      .item__SVG {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  @include media(">=smallLT") {
+    span {
+      font-size: 1.2rem;
+    }
+  }
+}

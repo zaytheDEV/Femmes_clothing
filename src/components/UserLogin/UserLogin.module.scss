@@ -1,0 +1,200 @@
+//CSS imports
+@import "../../MainStyles";
+@import "../../breakpoints/breakpoints.scss";
+
+.login__main {
+  @include centerContent;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.login__backBTN {
+  position: absolute;
+  display: none;
+  left: 100px;
+  top: 150px;
+  height: 60px;
+  width: auto;
+  .SVG__holder {
+    height: 100%;
+    width: 25px;
+    margin-right: 10px;
+    object-fit: contain;
+  }
+  @include media(">=smallLT") {
+    @include centerContent;
+  }
+}
+
+//Form container----------------------------------------
+.form__contentContainer {
+  width: 350px;
+  height: 500px;
+  @include media(">=smallLT") {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+.form__title__holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span {
+    font-family: fontMed;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: center;
+    max-width: 500px;
+    color: #7d7d7d;
+    font-size: 14.4px;
+    line-height: 1.5em;
+  }
+}
+
+.form__info__container {
+  margin-top: 50px;
+  input {
+    width: 100%;
+    height: 47px;
+    padding: 10px 10px 10px 35px;
+    border-radius: 30px;
+    border: solid 1px #707070;
+    outline: none;
+    margin-bottom: 20px;
+  }
+  button {
+    margin-top: 25px;
+    width: 100%;
+    height: 50px;
+    background-color: $mainColor;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+}
+.forgot__password__holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .checkBox__holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 130px;
+    height: 40px;
+    // background-color: yellow;
+    position: relative;
+    input {
+      position: relative;
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      outline: solid 1px $inputGray;
+      cursor: pointer;
+    }
+    span {
+      font-size: 13.5px;
+    }
+  }
+  .forgotPassword__link {
+    color: #7d7d7d;
+    cursor: pointer;
+    font-size: 13.5px;
+  }
+}
+.logIn__links__holder {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  .login__link {
+    width: 180px;
+    height: 100%;
+    border-radius: 30px;
+    @include centerContent;
+    background-color: #3b5998;
+    color: #fff;
+    cursor: pointer;
+    .linkSVG {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+  .gmail__link {
+    background-color: #fff;
+    border: solid 1px #f1584d;
+    span {
+      color: #000;
+    }
+  }
+}
+
+.signUp__holder {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  :nth-child(1) {
+    margin-right: 15px;
+  }
+  .signUp__BTN {
+    cursor: pointer;
+  }
+}
+//Sign Up Form Styles
+.input__ {
+  span {
+    color: $invalid;
+    padding: 5px;
+    font-size: 13px;
+  }
+}
+.signUp__formInputs {
+  margin-top: 20px;
+  input {
+    width: 100%;
+    height: 47px;
+    padding: 10px 10px 10px 35px;
+    border: solid 1px #707070;
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+}
+.signUp__checkBox__holder {
+  width: 100%;
+  height: 20px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  input {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    margin-right: 10px;
+    outline: solid 1px $inputGray;
+    cursor: pointer;
+  }
+}
+.signUp__button__container {
+  margin-top: 50px;
+}
+.currentMember__container {
+  margin-top: 10px;
+  width: auto;
+  span {
+    font-size: 13px;
+    font-family: "fontMed";
+  }
+}

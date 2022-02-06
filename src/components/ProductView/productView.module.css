@@ -1,0 +1,337 @@
+/**
+*
+* Testing
+*
+**/
+.productView__main {
+  width: 100vw;
+  margin-top: 110px;
+  padding-bottom: 20px;
+}
+
+.upper__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.upper__content .product__images__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  row-gap: 10px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upper__content .product__images__container .image__holder {
+  width: 45%;
+  height: 50%;
+}
+
+.upper__content .product__images__container .image__holder img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .upper__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .upper__content .product__images__container {
+    width: 900px;
+  }
+}
+
+.right__col {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .right__col {
+    width: 500px;
+    margin-bottom: 0;
+  }
+}
+
+.info__header {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.info__header .title__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.info__header .title__container .product__title {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  font-family: fontMed;
+}
+
+.info__header .quickBag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.info__header .quickBag span {
+  font-size: 1rem;
+}
+
+.info__header .quickBag .bag_SVG {
+  height: 20px;
+  width: 20px;
+}
+
+.second__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+
+.second__row .price {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .second__row .price {
+    font-size: 1.6rem;
+  }
+}
+
+.second__row .item__color__container {
+  width: 100%;
+  height: 110px;
+  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.second__row .item__color__container .item__color {
+  height: 10px;
+  font-size: 1.2rem;
+  font-family: fontMed;
+}
+
+.second__row .item__color__container .colors__holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 100px;
+  gap: 10px;
+}
+
+.second__row .item__color__container .colors__holder .colorType__box {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 90px;
+  cursor: pointer;
+  border: solid thin #fff;
+}
+
+.second__row .item__color__container .colors__holder .colorType__box:hover {
+  border: solid thin #000;
+}
+
+.second__row .item__color__container .colors__holder .colorType__box img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.user__actions__row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.user__actions__row .size__selector__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.user__actions__row .size__selector__container span {
+  font-size: 1.1rem;
+  font-family: fontMed;
+}
+
+.user__actions__row .size__selector__container .checkbox__holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+}
+
+.user__actions__row .size__selector__container .checkbox__holder .size__checkbox {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: solid thin #000;
+}
+
+.user__actions__row .size__selector__container .checkbox__holder .size__checkbox span {
+  color: #000;
+}
+
+.user__actions__row .size__selector__container .checkbox__holder .size__checkbox .size__label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.user__actions__row .size__selector__container .checkbox__holder .size__checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.user__actions__row .checkedbox {
+  background-color: #000;
+}
+
+.user__actions__row .checkedbox span {
+  color: #fff !important;
+}
+
+.user__actions__row .btn__holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.user__actions__row .btn__holder .addToCart__BTN, .user__actions__row .btn__holder .addToFav__BTN {
+  width: 230px;
+  height: 60px;
+  border-radius: 35px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.user__actions__row .btn__holder .addToCart__BTN {
+  background-color: #D8E2DC;
+}
+
+.user__actions__row .btn__holder .addToFav__BTN {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  border: solid thin #000;
+}
+
+.user__actions__row .btn__holder .addToFav__BTN .heart__SVG {
+  height: 20px;
+  width: 20px;
+}
+/*# sourceMappingURL=productView.module.css.map */

@@ -1,0 +1,286 @@
+/**
+*
+* Testing
+*
+**/
+.login__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.login__backBTN {
+  position: absolute;
+  display: none;
+  left: 100px;
+  top: 150px;
+  height: 60px;
+  width: auto;
+}
+
+.login__backBTN .SVG__holder {
+  height: 100%;
+  width: 25px;
+  margin-right: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+  .login__backBTN {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.form__contentContainer {
+  width: 350px;
+  height: 500px;
+}
+
+@media (min-width: 1024px) {
+  .form__contentContainer {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+.form__title__holder {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__title__holder span {
+  font-family: fontMed;
+  margin-bottom: 20px;
+}
+
+.form__title__holder p {
+  text-align: center;
+  max-width: 500px;
+  color: #7d7d7d;
+  font-size: 14.4px;
+  line-height: 1.5em;
+}
+
+.form__info__container {
+  margin-top: 50px;
+}
+
+.form__info__container input {
+  width: 100%;
+  height: 47px;
+  padding: 10px 10px 10px 35px;
+  border-radius: 30px;
+  border: solid 1px #707070;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.form__info__container button {
+  margin-top: 25px;
+  width: 100%;
+  height: 50px;
+  background-color: #fec89a;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.forgot__password__holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.forgot__password__holder .checkBox__holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 130px;
+  height: 40px;
+  position: relative;
+}
+
+.forgot__password__holder .checkBox__holder input {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  outline: solid 1px #f1f1f1;
+  cursor: pointer;
+}
+
+.forgot__password__holder .checkBox__holder span {
+  font-size: 13.5px;
+}
+
+.forgot__password__holder .forgotPassword__link {
+  color: #7d7d7d;
+  cursor: pointer;
+  font-size: 13.5px;
+}
+
+.logIn__links__holder {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.logIn__links__holder .login__link {
+  width: 180px;
+  height: 100%;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3b5998;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logIn__links__holder .login__link .linkSVG {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.logIn__links__holder .login__link span {
+  font-size: 14px;
+}
+
+.logIn__links__holder .gmail__link {
+  background-color: #fff;
+  border: solid 1px #f1584d;
+}
+
+.logIn__links__holder .gmail__link span {
+  color: #000;
+}
+
+.signUp__holder {
+  margin-top: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.signUp__holder :nth-child(1) {
+  margin-right: 15px;
+}
+
+.signUp__holder .signUp__BTN {
+  cursor: pointer;
+}
+
+.input__ span {
+  color: #FF3636;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.signUp__formInputs {
+  margin-top: 20px;
+}
+
+.signUp__formInputs input {
+  width: 100%;
+  height: 47px;
+  padding: 10px 10px 10px 35px;
+  border: solid 1px #707070;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+.signUp__checkBox__holder {
+  width: 100%;
+  height: 20px;
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.signUp__checkBox__holder input {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  margin-right: 10px;
+  outline: solid 1px #f1f1f1;
+  cursor: pointer;
+}
+
+.signUp__button__container {
+  margin-top: 50px;
+}
+
+.currentMember__container {
+  margin-top: 10px;
+  width: auto;
+}
+
+.currentMember__container span {
+  font-size: 13px;
+  font-family: "fontMed";
+}
+/*# sourceMappingURL=UserLogin.module.css.map */

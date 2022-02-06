@@ -1,0 +1,26 @@
+//Color Variables
+$mainColor: #fec89a;
+$blue: #D8E2DC;
+$inputGray: #f1f1f1;
+$invalid: #FF3636;
+$pink: #FEC5BB;
+
+
+//Media Indenting
+@mixin centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Font Sizes
+$pageTitleMob: 1.5rem;
+$pageTitleTablet: 1.7rem;
+$pageTitleLT: 2rem;
+$pageSubTitleLT: 1.4rem;
+
+//Transitions
+@mixin smoothTransition($element) {
+    transition: $element 1.3s $cubic-bezier;
+}
+$cubic-bezier: cubic-bezier(0.19, 1, 0.22, 1);

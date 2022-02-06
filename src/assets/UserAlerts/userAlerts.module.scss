@@ -1,0 +1,31 @@
+@import "../../MainStyles";
+@import "../../breakpoints/breakpoints.scss";
+
+.userAlert__main{
+    width: 100vw;
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    @include centerContent;
+}
+.message{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    @include centerContent;
+    .message__SVG{
+        width: 20px;
+        height: 20px;
+    }
+    span{
+        color: #fff;
+    }
+}
+.success__message{
+    background-color: #86E093;
+}

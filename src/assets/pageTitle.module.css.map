@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AE4UA;;;;GAIG;AF7UH,AAAA,YAAY,CAAC;EACX,YAAY,EAAE,IAAI;CAYnB;;AAbD,AAEE,YAFU,CAEV,IAAI,CAAC;EACH,WAAW,EAAE,OAAO;EACpB,cAAc,EAAE,UAAU;EAC1B,SAAS,ECQE,MAAM;CDDlB;;AEiGD,MAAM,EAAE,SAAS,EAAE,KAAK;EF7G1B,AAEE,YAFU,CAEV,IAAI,CAAC;IAKD,SAAS,ECOG,MAAM;GDFrB;;;AEiGD,MAAM,EAAE,SAAS,EAAE,MAAM;EF7G3B,AAEE,YAFU,CAEV,IAAI,CAAC;IAQD,SAAS,ECKD,IAAI;GDHf",
+    "sources": [
+        "pageTitle.module.scss",
+        "../_MainStyles.scss",
+        "../breakpoints/breakpoints.scss"
+    ],
+    "names": [],
+    "file": "pageTitle.module.css"
+}

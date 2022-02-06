@@ -1,0 +1,213 @@
+//CSS imports
+@import "../../MainStyles";
+@import "../../breakpoints/breakpoints.scss";
+
+.nav__main {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  height: 100px;
+  width: 100vw;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  .nav__left__content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .logo__holder{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span{
+        display: block;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+        font-family: fontMed;
+        @include media('>=smallLT'){
+          display: none;
+        }
+      }
+      .nav__logo {
+      @include centerContent;
+      width: 40px;
+      height: 100%;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    }
+    
+    .nav__search {
+      display: none;
+      align-items: center;
+      width: fit-content;
+      height: 35px;
+      padding: 10px;
+      border-radius: 50px;
+      background-color: $inputGray;
+      .search__icon {
+        flex: 0 0 auto;
+        width: 20px;
+        height: 30px;
+      }
+      input {
+        border: none;
+        height: 25px;
+        background-color: transparent;
+        font-size: 1rem;
+        font-family: fontMed;
+        margin-left: 10px;
+        @include smoothTransition(width);
+      }
+      input:focus {
+        outline: none;
+      }
+      @include media(">=smallLT") {
+        display: flex;
+      }
+    }
+  }
+}
+//NavLinks
+.navLinks__main {
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  .navMenu__button {
+    @include centerContent;
+    width: 30px;
+    height: 30px;
+    border-radius: 6.75px;
+    background-color: $mainColor;
+    flex-direction: column;
+    cursor: pointer;
+    div {
+      width: 20px;
+      height: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      span {
+        display: block;
+        width: 20px;
+        padding: 1px;
+        background-color: #fff;
+      }
+      :nth-child(1) {
+        width: 70%;
+      }
+    }
+    @include media(">=smallLT") {
+      display: none !important;
+    }
+  }
+  .nav__userInfo {
+    @include centerContent;
+    width: auto;
+    height: 100%;
+    .user__greeting {
+      width: 100px;
+      background-color: aquamarine;
+      :nth-child(2) {
+        font-family: fontMed;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+//Sub Categories
+.sub__cats {
+  @include centerContent;
+  height: 100%;
+  margin-right: 20px;
+  .cat__link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    @include centerContent;
+    @include smoothTransition(background-color);
+    &:hover {
+      background-color: $inputGray;
+    }
+    .link__SVG {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .nav__cart {
+    position: relative;
+    .cart__amount {
+      @include centerContent;
+      width: 18px;
+      height: 18px;
+      background-color: $mainColor;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      span {
+        color: #fff;
+        font-size: 11px;
+      }
+    }
+  }
+}
+.nav__profile__container {
+  display: none;
+  align-items: center;
+  margin-right: 10px;
+  .nav__profileSVG {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  @include media('>=smallLT'){
+    display: flex;
+    .userProfile{
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+  }
+}
+.cat__search__mobile {
+  cursor: pointer;
+  @include media(">=smallLT") {
+    display: none !important;
+  }
+}
+//Center Nav Links
+.nav__centerLinks__conatiner {
+  display: none;
+  width: 450px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    li {
+      list-style: none;
+      cursor: pointer;
+      text-transform: capitalize;
+      color: #000;
+      @include smoothTransition(color);
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  @include media(">=smallLT") {
+    @include centerContent;
+  }
+}

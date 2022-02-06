@@ -1,0 +1,17 @@
+@import "../MainStyles";
+@import "../breakpoints/breakpoints.scss";
+
+.title__main {
+  margin-right: 50px;
+  span {
+    font-family: fontMed;
+    text-transform: capitalize;
+    font-size: $pageTitleMob;
+    @include media(">=tablet") {
+      font-size: $pageTitleTablet;
+    }
+    @include media(">=smallLT") {
+      font-size: $pageTitleLT;
+    }
+  }
+}

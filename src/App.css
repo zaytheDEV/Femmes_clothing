@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+/**
+*
+* Testing
+*
+**/
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: fontReg;
+  color: #1a1a1a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: fontReg;
+  src: url(./fonts/Georama-Regular.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@font-face {
+  font-family: fontBold;
+  src: url(./fonts/Georama-Bold.ttf);
+}
+
+@font-face {
+  font-family: fontMed;
+  src: url(./fonts/Georama-Medium.ttf);
+}
+
+.pageSection {
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .pageSection {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (min-width: 1366px) {
+  .pageSection {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+.page__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  height: 55px;
+  z-index: 100;
+  padding-bottom: 10px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,255 @@
+.home__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.image__count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 50px;
+}
+
+.image__count .count__number {
+  padding: 10px;
+}
+
+.image__count .count__loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: block;
+  position: relative;
+  width: 1px;
+  height: 400px;
+  background-color: #f1f1f1;
+}
+
+.image__count .count__loader span {
+  position: absolute;
+  top: 0;
+  width: 2.5px;
+  -webkit-transition: height 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: height 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  background-color: #707070;
+}
+
+.photo__reel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 500px;
+}
+
+.photo__reel .photos__holder {
+  width: 450px;
+  height: 520px;
+  overflow: hidden;
+}
+
+.photo__reel .photos__holder .photos {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  will-change: transform;
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.photo__reel .photos__holder .photos img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.banner__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 600px;
+}
+
+.banner__content .banner {
+  max-width: 300px;
+}
+
+.banner__content .banner p {
+  font-family: fontBold;
+  font-size: 3rem;
+}
+
+.banner__content .button__holder {
+  margin-top: 50px;
+}
+
+.banner__content .button__holder .button__SVG {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+}
+
+.reel__nav {
+  position: absolute;
+  bottom: 20px;
+  width: 150px;
+  height: 80px;
+}
+
+.reel__nav span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.reel__nav span::before {
+  width: 100%;
+  text-align: center;
+  content: attr(data-title);
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  -webkit-transition: color 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reel__nav span .nav__SVG {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  will-change: transform;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reel__nav :nth-child(1):hover::before {
+  color: #fec89a;
+}
+
+.reel__nav :nth-child(1):hover .nav__SVG {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.reel__nav :nth-child(2):hover::before {
+  color: #fec89a;
+}
+
+.reel__nav :nth-child(2):hover .nav__SVG {
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.reelPreview__holder {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  width: 300px;
+  height: 280px;
+  overflow: hidden;
+}
+
+.reelPreview__holder .preview__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 230px;
+  height: 100%;
+  will-change: transform;
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reelPreview__holder .preview__container img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=home.module.css.map */

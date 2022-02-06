@@ -1,0 +1,119 @@
+/**
+*
+* Testing
+*
+**/
+.quickCart__main {
+  position: fixed;
+  bottom: 0;
+  height: 80px;
+  width: 100vw;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  border-top: solid thin #ECEBE9;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cart__title {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-family: fontMed;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .cart__title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cart__title {
+    font-size: 1.3rem;
+  }
+}
+
+.left__quickCart, .right__quickCart {
+  width: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left__quickCart {
+  gap: 1.1rem;
+}
+
+.left__quickCart .cart__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 500px;
+  height: 60px;
+  overflow-y: scroll;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5px;
+}
+
+.right__quickCart {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.right__quickCart .subtotal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right__quickCart button {
+  width: 90px;
+  height: 45px;
+  background-color: #fec89a;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .right__quickCart button {
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+.close__cart {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.open__cart {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+/*# sourceMappingURL=quickCart.module.css.map */

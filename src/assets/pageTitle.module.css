@@ -1,0 +1,27 @@
+/**
+*
+* Testing
+*
+**/
+.title__main {
+  margin-right: 50px;
+}
+
+.title__main span {
+  font-family: fontMed;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .title__main span {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title__main span {
+    font-size: 2rem;
+  }
+}
+/*# sourceMappingURL=pageTitle.module.css.map */

@@ -1,0 +1,195 @@
+//CSS imports
+@import "../../MainStyles";
+@import "../../breakpoints/breakpoints.scss";
+
+.confirmationPage__main {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 110px;
+  margin-bottom: 30px;
+}
+.logo__container {
+  width: 60px;
+  height: 60px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @include media(">=smallLT") {
+    width: 90px;
+    height: 90px;
+  }
+}
+.comp__name {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-transform: capitalize;
+  font-family: fontMed;
+  @include media(">=smallLT") {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+}
+
+//order received section
+.order__received {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  b {
+    color: $mainColor;
+  }
+  @include media(">=smallLT") {
+    font-size: 1.8rem;
+  }
+}
+//shop button
+.shop__button {
+  width: 120px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: $mainColor;
+  border: none;
+  font-size: 1.1rem;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  @include media(">=smallLT") {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+//Order container
+.order__contianer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
+  background-color: #efefef;
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 10px;
+  .order__number {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-family: fontBold;
+    margin-bottom: 20px;
+  }
+  .order__info {
+    display: flex;
+    justify-content: space-between;
+    .order__user__info {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 16px;
+      }
+      .user__email {
+        color: $mainColor;
+      }
+    }
+  }
+  .order__amount {
+    display: flex;
+    flex-direction: column;
+    .order__price {
+      font-family: fontBold;
+      font-size: 1.3rem;
+    }
+    :nth-child(2) {
+      align-self: flex-end;
+      font-size: 16px;
+    }
+  }
+  @include media(">=smallLT") {
+    width: 650px;
+    height: 250px;
+    .order__number {
+      font-size: 1.3rem;
+    }
+    .order__price {
+      font-size: 1.8rem !important;
+    }
+    .order__info {
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+//Order Items
+.order__items__contianer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  gap: 10px;
+  margin-top: 40px;
+  span {
+    font-family: fontMed;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+  }
+  .items__holder {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    row-gap: 10px;
+    justify-items: center;
+    @include media(">=smallLT") {
+      justify-items: flex-start;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+  @include media('>=smallLT'){
+      width: 650px;
+  }
+}
+
+.item {
+  width: 180px;
+  height: 250px;
+  background-color: #ecebe9;
+  @include centerContent;
+  .img__lrg {
+    height: 190px;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .img__small {
+    height: 190px;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  @include media(">=smallLT") {
+    width: 300px;
+    height: 340px;
+    .img__lrg {
+      height: 250px;
+    }
+    .img__small{
+        height: 130px;
+    }
+  }
+}

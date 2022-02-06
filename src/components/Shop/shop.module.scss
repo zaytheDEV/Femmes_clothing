@@ -1,0 +1,102 @@
+@import "../../MainStyles";
+@import "../../breakpoints/breakpoints.scss";
+
+//Top Nav Sort
+.shop__main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.sort__nav__main {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  z-index: 100;
+  width: 100%;
+  top: 110px;
+  @include media(">=smallLT") {
+    top: 130px;
+  }
+}
+.navSort__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  border-bottom: solid thin #e0e0e0;
+}
+.sort__options__holder {
+  display: flex;
+  align-items: center;
+  ul {
+    display: none;
+    li {
+      display: flex;
+      list-style: none;
+      margin-right: 30px;
+      cursor: pointer;
+      div {
+        margin-left: 5px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    @include media(">=smallLT") {
+      display: flex;
+    }
+  }
+}
+.right__btns {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  align-self: self-end;
+  .all__filters,
+  .quickBag__container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    span {
+      margin-right: 10px;
+    }
+    .__SVG {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .all__filters {
+    margin-right: 20px;
+  }
+}
+
+//Products Section------------------
+.shop__content__main {
+  flex: 0 1 auto;
+  overflow-y: scroll;
+  width: 100%;
+  margin-top: 110px;
+  @include media(">=smallLT") {
+    margin-top: 130px;
+  }
+}
+.products__main {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+  justify-items: center;
+  row-gap: 15px;
+  @include media(">=tablet") {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  @include media(">=smallLT") {
+    padding-left: 100px;
+    padding-right: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  }
+}
