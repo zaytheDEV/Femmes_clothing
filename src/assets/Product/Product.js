@@ -1,12 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./product.module.css";
 import { auth } from "../../firebase";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { alertUser } from "../../features/userAlertSlice";
 
 function Product(props) {
-  const dispatch = useDispatch();
   const heartSVG = useRef();
   const user = auth.currentUser;
   const favCheckbox = useRef();

@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./favorites.module.css";
-import Button from "../../assets/Button";
-import { Link } from "react-router-dom";
 import PageTitle from "../../assets/PageTitle";
 import Favorite from "../../assets/Product/Favorite";
 import { useNavigate } from "react-router-dom";
