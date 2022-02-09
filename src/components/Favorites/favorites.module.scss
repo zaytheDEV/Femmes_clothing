@@ -3,13 +3,24 @@
 
 .favorites__main {
   width: 100vw;
-  height: 100vh;
   display: flex;
   padding-top: 100px;
   flex-direction: column;
   overflow: hidden;
 }
+.favorites-button{
+  width: max-content;
+  font-size: 16px;
+  padding: 10px 1.5em;
+  background-color: $mainColor;
+  border-radius: 30px;
+  cursor: pointer;
+  @include media('>smallLT') {
+    font-size: 18px;
+    padding: 15px 2em;
 
+  }
+}
 //No User Favorites Screen
 .empty__favorites {
   display: flex;
@@ -17,10 +28,14 @@
   flex-direction: column;
   align-items: center;
   padding-top: 100px;
+  gap: 50px;
   .favorites__title {
     font-family: fontMed;
     width: fit-content;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    @include media(">=smallLT") {
+      font-size: 1.2rem;
+    }
   }
   .favorites__signIn {
     margin-top: 50px;
@@ -38,20 +53,20 @@
 }
 //User logged in Favorites screen
 .favorites__items__holder {
-  width: 100%;
-  height: 100%;
-  flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   row-gap: 50px;
-  justify-items: center;
-  overflow-y: scroll;
+  column-gap: 1rem;
   padding-bottom: 20px;
   @include media(">=tablet") {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    min-width: 300px;
   }
   @include media(">=smallLT") {
-    grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+    justify-content: space-between;
+  }
+  @include media(">=laptop") {
+    column-gap: 40px;
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 410px));
   }
 }

@@ -5,11 +5,13 @@ const userAlertSlice = createSlice({
     initialState: {
         active: false,
         alertMessage: '',
+        alertType: '',
     },
     reducers: {
         alertUser(state, action) {
             state.active = true;
-            state.alertMessage = action.payload;
+            state.alertMessage = action.payload.message;
+            state.alertType = action.payload.type;
         },
         hideAlert(state){
             state.active = false;

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import TitleAni from "../../assets/TitleAni";
 import styles from "./UserLogin.module.css";
 import { useNavigate } from "react-router-dom";
 import { ref, set, onValue } from "firebase/database";
@@ -12,6 +11,7 @@ import { auth, db } from "../../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
 import useInput from "../../hooks/useInput";
+import { alertUser } from "../../features/userAlertSlice";
 function UserLogin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -95,7 +95,12 @@ function UserLogin() {
         }
       })
       .catch((error) => {
-        console.log(error.message);
+        console.log(error.code);
+        if (error.code === "auth/invalid-email" || error.code === 'auth/user-not-found'){
+          dispatch(alertUser({ message: 'invalid-email', type: "error" }));
+        }else if(error.code === 'auth/wrong-password' || error.code === 'auth/internal-error'){
+          dispatch(alertUser({message: 'invalid password', type: 'error'}))
+        }
       });
   };
   //Register new user
@@ -157,8 +162,8 @@ function UserLogin() {
             />
           </svg>
         </div>
-        <div onClick={backHandler}>
-          <TitleAni title1="Back" title2="to Store" />
+        <div onClick={backHandler} className={styles["back-button"]}>
+          back
         </div>
       </div>
 
@@ -166,12 +171,8 @@ function UserLogin() {
       {loggingIn && (
         <div className={styles.form__contentContainer}>
           <div className={styles.form__title__holder}>
-            <span>Log in</span>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry’s standard dummy text
-              ever since the 1500s
-            </p>
+            <span className={styles["login-title"]}>Log in</span>
+            <p>Login to view your favorites and many more benefits.</p>
           </div>
           <form className={styles.form__info__container}>
             <input ref={email} type="email" name="email" placeholder="E-mail" />
@@ -182,10 +183,6 @@ function UserLogin() {
               placeholder="Password"
             />
             <div className={styles.forgot__password__holder}>
-              <div className={styles.checkBox__holder}>
-                <input type="checkbox" name="stayLoggedIn" id="stayLoggedIn" />
-                <span>keep me signed in</span>
-              </div>
               <span className={styles.forgotPassword__link}>
                 forgot password?
               </span>
@@ -273,11 +270,10 @@ function UserLogin() {
               </div>
             </div>
             <button onClick={signIn}>Sign in</button>
-            <div className={styles.signUp__holder}>
-              <span>not a member yet?</span>
-              <div className={styles.signUp__BTN} onClick={loginTypeHandler}>
-                <TitleAni title1="Sign up" title2="today" bold />
-              </div>
+            <div className={styles.signUp__holder} onClick={loginTypeHandler}>
+              <span>
+                not a member yet? <b>Sign-Up</b>
+              </span>
             </div>
           </form>
         </div>
@@ -291,11 +287,7 @@ function UserLogin() {
               <span className={styles.signUp__title}>
                 Create an account and discover the benefits
               </span>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry’s standard dummy
-                text ever since the 1500s
-              </p>
+              <p>Create an account for free shipping and more!</p>
             </div>
             <div className={styles.signUp__formInputs}>
               <div className={styles.input__}>
@@ -390,7 +382,7 @@ function UserLogin() {
               className={styles.currentMember__container}
               onClick={loginTypeHandler}
             >
-              <TitleAni title1="Already a member?" title2="Sign in" />
+              Already a member? <b>Sign-in</b>
             </div>
           </div>
         </form>

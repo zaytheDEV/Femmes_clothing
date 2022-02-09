@@ -42,6 +42,10 @@
       .product__subInfo {
         color: #939393;
         text-transform: capitalize;
+        font-size: 14.3px;
+        @include media('>=tablet') {
+          font-size: 1rem;
+        }
       }
     }
     .item__adjustments {

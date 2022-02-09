@@ -112,8 +112,14 @@
 
 .info__header .title__container .product__title {
   text-transform: capitalize;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-family: fontMed;
+}
+
+@media (min-width: 768px) {
+  .info__header .title__container .product__title {
+    font-size: 1.6rem;
+  }
 }
 
 .info__header .quickBag {
@@ -128,7 +134,13 @@
 }
 
 .info__header .quickBag span {
-  font-size: 1rem;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .info__header .quickBag span {
+    font-size: 1rem;
+  }
 }
 
 .info__header .quickBag .bag_SVG {
@@ -302,13 +314,28 @@
   margin-bottom: 20px;
 }
 
-.user__actions__row .btn__holder .addToCart__BTN, .user__actions__row .btn__holder .addToFav__BTN {
-  width: 230px;
-  height: 60px;
+.user__actions__row .btn__holder .addToCart__BTN,
+.user__actions__row .btn__holder .addToFav__BTN {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 40px;
   border-radius: 35px;
   border: none;
-  font-size: 1.1rem;
+  font-size: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .user__actions__row .btn__holder .addToCart__BTN,
+  .user__actions__row .btn__holder .addToFav__BTN {
+    font-size: 1.1rem;
+    height: 50px;
+    padding-right: 1.3em;
+    padding-left: 1.3em;
+  }
 }
 
 .user__actions__row .btn__holder .addToCart__BTN {

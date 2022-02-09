@@ -9,7 +9,7 @@ import { addToFav, removeFav } from "../../features/userFavoritesSlice";
 import QuickCart from "../QuickCart/QuickCart";
 import { useNavigate } from "react-router-dom";
 import { alertUser } from "../../features/userAlertSlice";
-
+import { activateCart } from "../../features/quickCartSlice";
 
 function ShopMen(props) {
   const cart = useSelector((state) => state.cart.cart);
@@ -24,17 +24,21 @@ function ShopMen(props) {
       }
     }
     dispatch(addToCart(product));
-    dispatch(alertUser("cartADD"));
+    dispatch(alertUser({ message: "added to bag", type: "success" }));
+  };
+  //toggle Quick Cart handler
+  const toggleQuickCart = () => {
+    dispatch(activateCart());
   };
   //add to favorites handler
   const addToFavoritesHandler = (item) => {
     dispatch(addToFav(item));
-    dispatch(alertUser("favADD"));
+    dispatch(alertUser({ message: "added to favorites", type: "success" }));
   };
   //remove from favorites
   const removeFromFavoritesHandler = (favID) => {
     dispatch(removeFav(favID));
-    dispatch(alertUser("favRemove"));
+    dispatch(alertUser({ message: "removed from favorites", type: "remove" }));
   };
 
   //filtered products
@@ -48,8 +52,8 @@ function ShopMen(props) {
   return (
     <div className={`${styles.shop__main} `}>
       <QuickCart />
-      <div className={`${styles.sort__nav__main} pageSection`}>
-        <div className={styles.navSort__container}>
+      <div className={styles.sort__nav__main}>
+        <div className={`${styles.navSort__container} pageSection`}>
           <div className={styles.sort__options__holder}>
             <PageTitle title="Shop Men" />
             <ul>
@@ -200,7 +204,7 @@ function ShopMen(props) {
               </div>
             </div>
             <div
-              onClick={props.toggleQuickCart}
+              onClick={toggleQuickCart}
               className={styles.quickBag__container}
             >
               <span>quick bag</span>
@@ -255,7 +259,7 @@ function ShopMen(props) {
           </div>
         </div>
       </div>
-      <div className={styles.shop__content__main}>
+      <div className={`${styles.shop__content__main} pageSection`}>
         <div className={styles.products__main}>
           {menProducts.map((product) => (
             <Product

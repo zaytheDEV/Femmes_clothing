@@ -12,20 +12,31 @@
 }
 .message{
     display: flex;
-    align-items: center;
     gap: 10px;
+    align-items: center;
     width: 100%;
     height: 100%;
     background-color: #000;
+    color: #fff;
     @include centerContent;
-    .message__SVG{
-        width: 20px;
-        height: 20px;
-    }
     span{
         color: #fff;
     }
 }
+.message__SVG{
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
 .success__message{
     background-color: #86E093;
+}
+.error-SVG{
+    height: 100%;
+    @include centerContent;
+    font-size: 1.2rem;
+    background-color: chocolate;
+}
+.error__message {
+    background-color: #FF3C3C;
 }

@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./cartItem.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
-import { addToFav, removeFav } from "../../features/userFavoritesSlice";
 
 function CartItem(props) {
-  const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.favorites);
   const navigate = useNavigate();
   const removeItemHandler = () => {

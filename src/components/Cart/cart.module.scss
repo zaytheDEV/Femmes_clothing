@@ -2,7 +2,6 @@
 @import "../../breakpoints/breakpoints.scss";
 
 .cart__main {
-  height: 100vh;
   width: 100vw;
   overflow: hidden;
   display: flex;
@@ -44,7 +43,7 @@
 .freeShipping__alert__container {
   padding: 10px;
   width: 100%;
-  height: 80px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +60,6 @@
   .alert__message {
     display: flex;
     flex-direction: column;
-    white-space: nowrap;
   }
   @include media(">=tablet") {
     .alert__message {
@@ -254,8 +252,8 @@
   position: relative;
   cursor: pointer;
   margin-top: 5px;
-  width: 200px;
-  height: 60px;
+  width: min-content;
+  padding: 10px 1em;
   background-color: $pink;
   border: none;
   border-radius: 30px;
@@ -265,6 +263,7 @@
   font-size: 1.1rem;
   @include media(">=smallLT") {
     margin-top: 50px;
+    padding: 20px 1.5em;
   }
 }
 .disableBTN {

@@ -45,7 +45,7 @@ function QuickCart() {
                   />
                 ))}
             </div>
-            {cart?.length === 0 && <span>(your bag is empty)</span>}
+            {cart?.length === 0 && <span className={styles["empty-cart"]}>(your bag is empty)</span>}
           </section>
           <section className={styles.right__quickCart}>
             <div className={styles.subtotal}>

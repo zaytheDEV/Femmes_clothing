@@ -3,29 +3,27 @@
 @import "../breakpoints/breakpoints.scss";
 
 .TitleAni__main {
-  width: 100px;
-  height: 35px;
+  background-color: crimson;
   position: relative;
-  @include centerContent;
   overflow: hidden;
   cursor: pointer;
+  width: max-content;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   span {
-    position: absolute;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
+    background-color: aqua;
+    @include centerContent;
     @include smoothTransition(transform);
   }
-  :nth-child(1) {
-    transform: translateY(0);
-  }
-  :nth-child(2) {
-    transform: translateY(100%);
+  :nth-child(2){
+    position: absolute;
   }
   @include media(">=smallLT") {
-    width: 100px;
     &:hover {
       :nth-child(1) {
         transform: translateY(-100%);

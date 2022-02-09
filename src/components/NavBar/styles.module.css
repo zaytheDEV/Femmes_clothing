@@ -42,19 +42,6 @@
   gap: 10px;
 }
 
-.nav__main .nav__left__content .logo__holder span {
-  display: block;
-  font-size: 1.4rem;
-  text-transform: capitalize;
-  font-family: fontMed;
-}
-
-@media (min-width: 1024px) {
-  .nav__main .nav__left__content .logo__holder span {
-    display: none;
-  }
-}
-
 .nav__main .nav__left__content .logo__holder .nav__logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,7 +52,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 40px;
+  width: 35px;
   height: 100%;
 }
 
@@ -147,7 +134,7 @@
   width: 30px;
   height: 30px;
   border-radius: 6.75px;
-  background-color: #fec89a;
+  background-color: #faba83;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -225,14 +212,13 @@
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 .sub__cats .cat__link {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,13 +232,15 @@
   transition: background-color 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.sub__cats .cat__link:hover {
-  background-color: #f1f1f1;
+@media (min-width: 1024px) {
+  .sub__cats .cat__link:hover {
+    background-color: #f1f1f1;
+  }
 }
 
 .sub__cats .cat__link .link__SVG {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .sub__cats .nav__cart {
@@ -271,7 +259,7 @@
           justify-content: center;
   width: 18px;
   height: 18px;
-  background-color: #fec89a;
+  background-color: #faba83;
   border-radius: 50%;
   position: absolute;
   top: 3px;
@@ -289,6 +277,8 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 10px;
+  height: 100%;
+  position: relative;
 }
 
 .nav__profile__container .nav__profileSVG {
@@ -311,6 +301,14 @@
         -ms-flex-align: center;
             align-items: center;
     gap: 7px;
+  }
+  .nav__profile__container .signOut-title,
+  .nav__profile__container .signIn-title {
+    cursor: pointer;
+  }
+  .nav__profile__container .signOut-title:hover,
+  .nav__profile__container .signIn-title:hover {
+    text-decoration: underline;
   }
 }
 

@@ -3,7 +3,6 @@ import styles from "./favorite.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementItem } from "../../features/userCartSlice";
 
-
 function Favorite(props) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
@@ -55,12 +54,14 @@ function Favorite(props) {
         <div className={styles.left__item__info}>
           <span>{props.title}</span>
           <span>{props.type}</span>
-          <div onClick={addToCartHandler}>add to bag</div>
+          <div onClick={addToCartHandler} className={styles["cart-button"]}>
+            add to bag
+          </div>
         </div>
         <div className={styles.right__item__info}>
-          <span>${props.price}</span>
-          <div onClick={deleteFavorite} className={styles.item__SVG__container}>
-            <div className={styles.item__SVG}>
+          <span className={styles["item-price"]}>${props.price}</span>
+          <div onClick={deleteFavorite} className={styles["delete-item"]}>
+            <div className={styles["delete-item__SVG"]}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"

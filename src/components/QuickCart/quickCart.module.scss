@@ -1,74 +1,106 @@
 @import "../../MainStyles";
 @import "../../breakpoints/breakpoints.scss";
 
-.quickCart__main{
-    position: fixed;
-    bottom: 0;
-    height: 80px;
-    width: 100vw;
-    z-index: 100;
-    display: flex;
-    background-color: #fff;
-    border-top: solid thin #ECEBE9;
-    justify-content: space-between;
-    @include smoothTransition(transform);
-}
-.cart__title{
-    font-size: 1rem;
-    text-transform: capitalize;
-    font-family: fontMed;
-    white-space: nowrap;
-    @include media ('>=tablet'){
-        font-size: 1.1rem;
-    }
-    @include media ('>=smallLT'){
-        font-size: 1.3rem;
-    }
-}
-.left__quickCart, .right__quickCart{
-    width: auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
+.quickCart__main {
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  width: 100vw;
+  z-index: 100;
+  display: flex;
+  background-color: #fff;
+  border-top: solid thin #ecebe9;
+  justify-content: space-between;
+  @include smoothTransition(transform);
 }
 
-.left__quickCart{
+.left__quickCart,
+.right__quickCart {
+  width: auto;
+  height: 100%;
+  display: flex;
+}
+.cart__title {
+  font-size: 15px;
+  text-transform: capitalize;
+  font-family: fontMed;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  @include media(">=tablet") {
+    font-size: 1.1rem;
+  }
+  @include media(">=smallLT") {
+    font-size: 1.3rem;
+  }
+}
+.left__quickCart {
+  display: flex;
+  position: relative;
+  gap: 2vw;
+  .cart__items {
+    display: none;
     gap: 1.1rem;
-    .cart__items{
+    flex-wrap: wrap;
+    max-width: 500px;
+    height: 60px;
+    overflow-y: scroll;
+    align-items: center;
+    padding-top: 5px;
+    @include media('>=tablet') {
         display: flex;
-        gap: 1.1rem;
-        flex-wrap: wrap;
-        max-width: 500px;
-        height: 60px;
-        overflow-y: scroll;
-        align-items: center;
-        padding-top: 5px;
     }
+  }
 }
-.right__quickCart{
-    justify-content: flex-end;
+.empty-cart {
+  font-size: 12px;
+  position: absolute;
+  white-space: nowrap;
+  bottom: 10px;
+  @include media('>=tablet'){
+      position: relative;
+      bottom: 0;
+      align-self: center;
+      font-size: 1rem;
+  }
+}
+.right__quickCart {
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  .subtotal {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 14px;
+      @include media('>=smallLT') {
+          font-size: 1.1rem;
+      }
+    }
+  }
+  button {
+    width: fit-content;
+    height: 30px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: $mainColor;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    @include media(">=smallLT") {
+      width: 100px;
+      height: 50px;
+      font-size: 16px;
+    }
+  }
+  @include media(">=tablet") {
     gap: 1.5rem;
-    .subtotal{
-        display: flex;
-        flex-direction: column;
-    }
-    button{
-        width: 90px;
-        height: 45px;
-        background-color: $mainColor;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        @include media ('>=smallLT'){
-            width: 100px;
-            height: 50px;
-            font-size: 16px;
-        }
-    }
+  }
 }
-.close__cart{
-    transform: translateY(100%);
+.close__cart {
+  transform: translateY(100%);
 }
-.open__cart{
-    transform: translateY(0);
+.open__cart {
+  transform: translateY(0);
 }

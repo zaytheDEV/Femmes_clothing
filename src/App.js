@@ -15,7 +15,6 @@ import Cart from "./components/Cart/Cart";
 import Shop from "./components/Shop/Shop";
 import ShopMen from "./components/Shop/ShopMen";
 import ShopWomen from "./components/Shop/ShopWomen";
-import { activateCart } from "./features/quickCartSlice";
 import ProductView from "./components/ProductView/ProductView";
 import Checkout from "./components/Checkout/Checkout";
 import OrderConfirmation from "./components/OrderConfirmation/OrderConfirmation";
@@ -47,9 +46,7 @@ function App() {
   }, [favorites, cart, userId]);
 
   //toggle quick cart
-  const toggleQuickCart = () => {
-    dispatch(activateCart());
-  };
+
   //Set User profile
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -132,23 +129,23 @@ function App() {
           <Route
             exact
             path="/shop"
-            element={<Shop toggleQuickCart={toggleQuickCart} />}
+            element={<Shop />}
           />
           <Route
             exact
             path="/shop-Men"
-            element={<ShopMen toggleQuickCart={toggleQuickCart} />}
+            element={<ShopMen />}
           />
           <Route
             exact
             path="/shop-Women"
-            element={<ShopWomen toggleQuickCart={toggleQuickCart} />}
+            element={<ShopWomen />}
           />
           <Route exact path="/checkout" element={<Checkout />} />
           <Route
             exact
             path="/product/:productURL/:id"
-            element={<ProductView toggleQuickCart={toggleQuickCart} />}
+            element={<ProductView />}
           />
         </Routes>
       </Router>

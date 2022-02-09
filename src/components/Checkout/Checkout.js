@@ -6,27 +6,26 @@ import CurrencyFormat from "react-currency-format";
 import { useNavigate } from "react-router-dom";
 import { resetCart, setOrder } from "../../features/userCartSlice";
 
-
 function Checkout() {
   const cart = useSelector((state) => state.cart.cart);
   const subTotal = useSelector((state) => state.cart.total);
   const cartTotal = useSelector((state) => state.cart.cartTotal);
   const taxAmount = useSelector((state) => state.cart.taxAmount);
-  const { userName, lastName} = useSelector((state) => state.user);
+  const { userLoggedIn } = useSelector((state) => state.user);
+  const { userName, lastName } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // place Order Handler
   const placeOrderHandler = () => {
-    dispatch(setOrder({products: cart, orderTotal: cartTotal}));
-    dispatch(resetCart())
-    navigate('/order-confirmation');
-  }
-    useEffect(() => {
-        if(cart?.length === 0){
-            navigate('/cart')
-        }
-    },[cart?.length, navigate])
-
+    dispatch(setOrder({ products: cart, orderTotal: cartTotal }));
+    dispatch(resetCart());
+    navigate("/order-confirmation");
+  };
+  useEffect(() => {
+    if (cart?.length === 0) {
+      navigate("/cart");
+    }
+  }, [cart?.length, navigate]);
 
   return (
     <div className={`${styles.checkout__main} pageSection`}>
@@ -87,7 +86,13 @@ function Checkout() {
                     </svg>
                   </div>
                 </span>
-                <span>{userName} {lastName}</span>
+                {userLoggedIn ? (
+                  <span>
+                    {userName} {lastName}
+                  </span>
+                ) : (
+                  <span>Guest</span>
+                )}
               </span>
               <span className={styles.user__SVG__info}>
                 <span className={styles.info__icon}>

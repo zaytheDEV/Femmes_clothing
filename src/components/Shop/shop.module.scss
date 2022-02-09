@@ -4,7 +4,6 @@
 //Top Nav Sort
 .shop__main {
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +13,7 @@
   background-color: #fff;
   z-index: 100;
   width: 100%;
-  top: 110px;
+  top: 90px;
   @include media(">=smallLT") {
     top: 130px;
   }
@@ -60,6 +59,10 @@
     cursor: pointer;
     span {
       margin-right: 10px;
+      font-size: 13px;
+      @include media(">=smallLT") {
+        font-size: 1rem;
+      }
     }
     .__SVG {
       width: 22px;
@@ -67,14 +70,16 @@
     }
   }
   .all__filters {
-    margin-right: 20px;
+    margin-right: 5px;
+    @include media(">=smallLT") {
+      margin-right: 10px;
+    }
   }
 }
 
 //Products Section------------------
 .shop__content__main {
   flex: 0 1 auto;
-  overflow-y: scroll;
   width: 100%;
   margin-top: 110px;
   @include media(">=smallLT") {
@@ -82,21 +87,16 @@
   }
 }
 .products__main {
-  padding-left: 30px;
-  padding-right: 30px;
   margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 10px;
   justify-items: center;
   row-gap: 15px;
   @include media(">=tablet") {
-    padding-left: 60px;
-    padding-right: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   @include media(">=smallLT") {
-    padding-left: 100px;
-    padding-right: 100px;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   }
 }

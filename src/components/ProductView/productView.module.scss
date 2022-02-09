@@ -60,8 +60,11 @@
     flex-direction: column;
     .product__title {
       text-transform: capitalize;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       font-family: fontMed;
+      @include media(">=tablet") {
+        font-size: 1.6rem;
+      }
     }
   }
   .quickBag {
@@ -70,7 +73,10 @@
     cursor: pointer;
     gap: 10px;
     span {
-      font-size: 1rem;
+      font-size: 14px;
+      @include media(">=tablet") {
+        font-size: 1rem;
+      }
     }
     .bag_SVG {
       height: 20px;
@@ -86,7 +92,7 @@
   gap: 40px;
   .price {
     font-size: 1.5rem;
-    @include media('>=smallLT'){
+    @include media(">=smallLT") {
       font-size: 1.6rem;
     }
   }
@@ -176,13 +182,22 @@
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
-    .addToCart__BTN, .addToFav__BTN{
-      width: 230px;
-      height: 60px;
+    .addToCart__BTN,
+    .addToFav__BTN {
+      width: fit-content;
+      height: 40px;
       border-radius: 35px;
       border: none;
-      font-size: 1.1rem;
+      font-size: 15px;
+      padding-right: 1em;
+      padding-left: 1em;
       cursor: pointer;
+      @include media(">=tablet") {
+        font-size: 1.1rem;
+        height: 50px;
+        padding-right: 1.3em;
+        padding-left: 1.3em;
+      }
     }
     .addToCart__BTN {
       background-color: $blue;

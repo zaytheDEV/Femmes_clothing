@@ -53,7 +53,7 @@ function Cart() {
   //remove from cart Handler
   const removeItemHandler = (itemId) => {
     dispatch(removeFromCart(itemId));
-    dispatch(alertUser("cartRemove"));
+    dispatch(alertUser({ message: "removed from bag", type: "remove" }));
   };
 
   //Increase quantity handler
@@ -65,10 +65,12 @@ function Cart() {
   const favoriteHandler = (type, itemID, item) => {
     if (type === "add") {
       dispatch(addToFav(item));
-      dispatch(alertUser("favADD"));
+      dispatch(alertUser({ message: "added to favorites", type: "success" }));
     } else if (type === "remove") {
       dispatch(removeFav(itemID));
-      dispatch(alertUser("favRemove"));
+      dispatch(
+        alertUser({ message: "removed from favorites", type: "remove" })
+      );
     }
   };
 

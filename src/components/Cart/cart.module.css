@@ -4,7 +4,6 @@
 *
 **/
 .cart__main {
-  height: 100vh;
   width: 100vw;
   overflow: hidden;
   display: -webkit-box;
@@ -83,7 +82,9 @@
 .freeShipping__alert__container {
   padding: 10px;
   width: 100%;
-  height: 80px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,7 +102,7 @@
 .freeShipping__alert__container .alert__title {
   display: block;
   width: 100%;
-  color: #fec89a;
+  color: #faba83;
   font-family: fontMed;
   font-size: 14px;
   margin-bottom: 5px;
@@ -115,7 +116,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
@@ -292,7 +292,7 @@
   width: 70px;
   height: 35px;
   cursor: pointer;
-  background-color: #fec89a;
+  background-color: #faba83;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,8 +373,10 @@
   position: relative;
   cursor: pointer;
   margin-top: 5px;
-  width: 200px;
-  height: 60px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 10px 1em;
   background-color: #FEC5BB;
   border: none;
   border-radius: 30px;
@@ -388,6 +390,7 @@
 @media (min-width: 1024px) {
   .checkoutBTN {
     margin-top: 50px;
+    padding: 20px 1.5em;
   }
 }
 

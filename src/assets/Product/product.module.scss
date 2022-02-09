@@ -2,8 +2,11 @@
 @import "../../breakpoints/breakpoints.scss";
 
 .product__main {
-  width: 210px;
-  height: 350px;
+  width: 100%;
+  height: 300px;
+  @include media(">=tablet") {
+    height: 350px;
+  }
   @include media(">=smallLT") {
     width: 310px;
     height: 500px;
@@ -12,17 +15,20 @@
 .product__background {
   @include centerContent;
   width: 100%;
-  height: 250px;
+  height: 200px;
   position: relative;
   cursor: pointer;
-  .product__cover{
+  .product__cover {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ECEBE9;
+    background-color: #ecebe9;
     z-index: 1;
+  }
+  @include media(">=tablet") {
+    height: 250px;
   }
   @include media(">=smallLT") {
     height: 400px;
@@ -78,8 +84,8 @@
 
 //Product Image
 .product__imageLrg {
-  width: 170px;
-  height: 170px;
+  width: 120px;
+  height: 120px;
   z-index: 2;
   pointer-events: none;
   img {
@@ -88,19 +94,27 @@
     object-fit: contain;
   }
   @include media(">=smallLT") {
+    width: 170px;
+    height: 170px;
+  }
+  @include media(">=smallLT") {
     width: 300px;
     height: 300px;
   }
 }
 .product__image {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   z-index: 2;
   pointer-events: none;
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+  @include media(">=smallLT") {
+    width: 130px;
+    height: 130px;
   }
   @include media(">=smallLT") {
     width: 200px;
@@ -113,8 +127,10 @@
   height: 100px;
   padding-top: 10px;
   display: flex;
+  flex-direction: column;
   position: relative;
   justify-content: space-between;
+  padding-left: 5px;
   span {
     margin-bottom: 5px;
   }
@@ -125,18 +141,21 @@
       text-transform: capitalize;
       font-size: 14.23px;
       font-family: fontMed;
-      white-space: nowrap;
     }
     .product__type {
+      font-size: 13px;
       color: #939393;
+      @include media('>=tablet'){
+        font-size: 1rem;
+      }
     }
   }
 
   .product__right {
     display: flex;
     flex: 0 1 auto;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
     .new__product {
       color: $mainColor;
       font-size: 1rem;
@@ -144,6 +163,14 @@
     .product__price {
       font-size: 1rem;
     }
+    @include media(">=tablet") {
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  }
+  @include media(">=tablet") {
+    flex-direction: row;
   }
   @include media(">=smallLT") {
     .product__title {

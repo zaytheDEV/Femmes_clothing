@@ -3,7 +3,6 @@
 
 .checkout__main {
   width: 100vw;
-  height: 100vh;
   padding-top: 100px;
   position: relative;
   overflow: hidden;
@@ -24,40 +23,37 @@
 //---------------left column styles
 .left__col {
   display: grid;
+  gap: 10px;
   padding-top: 10px;
   width: 100%;
-  height: 50%;
-  overflow: scroll;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   @include media(">=smallLT") {
     max-width: 900px;
     height: 100%;
     overflow: auto;
     padding-bottom: 30px;
     justify-items: flex-start;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 .item__holder {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 200px;
-  height: 300px;
-  @include media(">=smallLT") {
-    width: 300px;
-    height: 400px;
-  }
+  width: 100%;
+  max-width: 300px;
+  height: min-content;
 }
 .item__image__container {
   @include centerContent;
   width: 100%;
-  height: 240px;
+  height: 200px;
   background-color: #ecebe9;
   .item__imageLRG {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     img {
       width: 100%;
       height: 100%;
@@ -69,12 +65,16 @@
     }
   }
   .item__imageSmall {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+    @include media(">=smallLT") {
+      width: 180px;
+      height: 180px;
     }
   }
   @include media(">=smallLT") {
@@ -83,10 +83,17 @@
 }
 .item__info {
   display: flex;
-  flex: 1 1 auto;
+  width: 100%;
+  height: 60px;
   justify-content: space-between;
   span {
     font-family: fontMed;
+    font-size: 14.2px;
+  }
+  @include media(">=tablet") {
+    span {
+      font-size: 1rem;
+    }
   }
   @include media(">=laptop") {
     span {
@@ -266,15 +273,20 @@
   .checkout__BTNs {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 30px;
     margin-top: 20px;
     button {
       width: 50%;
-      height: 60px;
+      max-width: 200px;
+      height: 45px;
       border: none;
       border-radius: 30px;
       font-size: 17px;
       cursor: pointer;
+      @include media(">=tablet") {
+        height: 60px;
+      }
     }
     :nth-child(1) {
       background-color: $blue;

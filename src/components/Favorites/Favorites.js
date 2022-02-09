@@ -7,7 +7,7 @@ import Favorite from "../../assets/Product/Favorite";
 import { useNavigate } from "react-router-dom";
 import { alertUser } from "../../features/userAlertSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, incrementItem } from "../../features/userCartSlice";
+import { addToCart } from "../../features/userCartSlice";
 import { removeFav } from "../../features/userFavoritesSlice";
 
 function Favorites() {
@@ -19,13 +19,13 @@ function Favorites() {
   // add to cart handler
   const addToCartHandler = (item) => {
     dispatch(addToCart(item));
-    dispatch(alertUser('cartADD'));
+    dispatch(alertUser({ message: "added to bag", type: "success" }));
   };
   //remove favorite
   const removeFavorite = (itemID) => {
     dispatch(removeFav(itemID));
-    dispatch(alertUser('favRemove'));
-  }  
+    dispatch(alertUser({ message: "removed from favorites", type: "remove" }));
+  };
   //prodcut view handler
   const productViewHandler = (productURL, productId) => {
     navigate(`/product/${productURL}/${productId}`);
@@ -41,20 +41,24 @@ function Favorites() {
             <span className={styles.favorites__title}>
               Please sign in to view your favorite items.
             </span>
-            <Link to="/login" style={{ color: "#000" }}>
-              <div className={styles.favorites__signIn}>
-                <Button title="sign in" title2="my account" width="150px" />
-              </div>
-            </Link>
+            <div
+              className={styles["favorites-button"]}
+              onClick={() => navigate("/login")}
+            >
+              sign in
+            </div>
           </>
         </div>
       )}
       {userLoggedIn && favorites.length === 0 && (
         <div className={styles.empty__favorites}>
           <span className={styles.noFavorites}>Save your favorite items </span>
-          <Link to="/shop" style={{ color: "#000" }}>
-            <Button title="shop" title2="styles" width="180px" />
-          </Link>
+          <div
+            className={styles["favorites-button"]}
+            onClick={() => navigate("/shop")}
+          >
+            shop
+          </div>
         </div>
       )}
       {userLoggedIn && favorites.length > 0 && (

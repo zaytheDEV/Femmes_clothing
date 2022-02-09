@@ -76,6 +76,13 @@
 .item__info__container .item__info__content .product__info .product__subInfo {
   color: #939393;
   text-transform: capitalize;
+  font-size: 14.3px;
+}
+
+@media (min-width: 768px) {
+  .item__info__container .item__info__content .product__info .product__subInfo {
+    font-size: 1rem;
+  }
 }
 
 .item__info__container .item__info__content .item__adjustments {

@@ -203,7 +203,7 @@
 }
 
 .reel__nav :nth-child(1):hover::before {
-  color: #fec89a;
+  color: #faba83;
 }
 
 .reel__nav :nth-child(1):hover .nav__SVG {
@@ -212,7 +212,7 @@
 }
 
 .reel__nav :nth-child(2):hover::before {
-  color: #fec89a;
+  color: #faba83;
 }
 
 .reel__nav :nth-child(2):hover .nav__SVG {

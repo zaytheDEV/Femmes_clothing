@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { alertUser } from "../../features/userAlertSlice";
+import { activateCart } from "../../features/quickCartSlice";
 
 function ProductView(props) {
   const { id } = useParams();
@@ -23,6 +24,10 @@ function ProductView(props) {
   const colorPhotos = productInView.colorPhotos;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  //toggle Quick Cart Handler
+  const toggleQuickCart = () => {
+    dispatch(activateCart());
+  };
   //Item size checkbox animation
   const [checkboxOption, setCheckboxOption] = useState({
     smallCheckbox: false,
@@ -96,7 +101,7 @@ function ProductView(props) {
       }
     }
     dispatch(addToCart(newItem));
-    dispatch(alertUser('cartADD'));
+    dispatch(alertUser({ message: "added to bag", type: "success" }));
   };
 
   //add to favorites handler
@@ -109,11 +114,13 @@ function ProductView(props) {
     } else if (auth.currentUser && !itemFavorited) {
       setItemFavorited(true);
       dispatch(addToFav(newItem));
-      dispatch(alertUser('favADD'));
+      dispatch(alertUser({ message: "added to favorites", type: "success" }));
     } else if (auth.currentUser && itemFavorited) {
       setItemFavorited(false);
       dispatch(removeFav(productInView.id));
-      dispatch(alertUser('favRemove'));
+      dispatch(
+        alertUser({ message: "removed from favorites", type: "remove" })
+      );
     }
   };
 
@@ -157,7 +164,7 @@ function ProductView(props) {
               </span>
               <span>{productInView.type}</span>
             </div>
-            <div onClick={props.toggleQuickCart} className={styles.quickBag}>
+            <div onClick={toggleQuickCart} className={styles.quickBag}>
               <span>quick bag</span>
               <div className={styles.bag_SVG}>
                 <svg

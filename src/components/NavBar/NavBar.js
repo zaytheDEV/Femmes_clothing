@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import TitleAni from "../../assets/TitleAni";
+import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import { logout } from "../../features/userSlice";
 import ReactDom from "react-dom";
@@ -10,6 +9,7 @@ import { Fragment } from "react";
 import MobileNavMenu from "./MobileNavMenu";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const { userLoggedIn, userName } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [searchBarWidth, setSearchBarWidth] = useState("100px");
@@ -22,14 +22,14 @@ const NavBar = () => {
     } else setSearchBarWidth("100px");
   };
   const signOut = () => {
-        auth
-          .signOut()
-          .then(() => {
-            dispatch(logout());
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+    auth
+      .signOut()
+      .then(() => {
+        dispatch(logout());
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   //Mobile Nav Bar Animation
@@ -41,7 +41,6 @@ const NavBar = () => {
       setnavMenuOpen(true);
     }
   };
-
   return (
     <div className={`pageSection ${styles.nav__main}`}>
       <Fragment>
@@ -54,7 +53,7 @@ const NavBar = () => {
         )}
       </Fragment>
       <div className={styles.nav__left__content}>
-        <Link to="/" style={{textDecoration: 'none'}}>
+        <Link to="/" style={{ textDecoration: "none" }}>
           <div className={styles.logo__holder}>
             <div className={styles.nav__logo}>
               <img
@@ -62,7 +61,6 @@ const NavBar = () => {
                 alt="logo"
               />
             </div>
-            <span>femmes.</span>
           </div>
         </Link>
         <div className={styles.nav__search}>
@@ -200,24 +198,6 @@ const NavBar = () => {
               </div>
             </div>
           </Link>
-          <div className={`${styles.cat__link} ${styles.cat__search__mobile}`}>
-            <div className={styles.link__SVG}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                height="100%"
-                viewBox="0 0 20.884 20.889"
-              >
-                <path
-                  id="Icon_ionic-ios-search"
-                  data-name="Icon ionic-ios-search"
-                  d="M25.139,23.87l-5.808-5.863a8.277,8.277,0,1,0-1.256,1.273l5.77,5.825a.894.894,0,0,0,1.262.033A.9.9,0,0,0,25.139,23.87ZM12.826,19.351a6.536,6.536,0,1,1,4.623-1.914A6.5,6.5,0,0,1,12.826,19.351Z"
-                  transform="translate(-4.5 -4.493)"
-                  fill="#000"
-                />
-              </svg>
-            </div>
-          </div>
         </div>
         <div className={styles.nav__userInfo}>
           <div className={styles.nav__profile__container}>
@@ -237,17 +217,18 @@ const NavBar = () => {
               </svg>
             </div>
             {!userLoggedIn && (
-              <Link
-                to="/login"
-                style={{ color: "#000", textDecoration: "none" }}
-              >
-                <span>sign in</span>
-              </Link>
+              <span className={styles["signIn-title"]} onClick={() => navigate('/login')}>
+                sign in
+              </span>
             )}
             {userLoggedIn && (
-              <div className={styles.userProfile} onClick={signOut}>
-                <span>Hello, </span>
-                <TitleAni title1={userName} title2="sign out" bold />
+              <div className={styles.userProfile}>
+                <span>
+                  Hello, <b style={{ fontFamily: "fontBold" }}>{userName}</b>
+                </span>
+                <span className={styles["signOut-title"]} onClick={signOut}>
+                  sign out
+                </span>
               </div>
             )}
           </div>

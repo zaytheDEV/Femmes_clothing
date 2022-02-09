@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./intro.module.css";
-import { animate, motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 function Intro() {
   const transition = { ease: [0.19, 1, 0.22, 1] };
@@ -9,24 +9,28 @@ function Intro() {
   const [introActive, setIntroActive] = useState(true);
   const variants = {
     hidden: { y: 100, skew: "10deg, 10deg", transition: transition },
-    visible: {y: 0, skew: 0, transition: {duration: 2, ...transition}},
-    revealSite: { y: '100%', transition: {duration: 2.5, ...transition}, transitionEnd: {display: 'none'}}
+    visible: { y: 0, skew: 0, transition: { duration: 2, ...transition } },
+    revealSite: {
+      y: "100%",
+      transition: { duration: 2.5, ...transition },
+      transitionEnd: { display: "none" },
+    },
   };
-  const introSequence = async() => {
-        await animateTitle.start('visible');
-        return await introBg.start('revealSite')
-
-  }
+  const introSequence = useCallback(async () => {
+    await animateTitle.start("visible");
+     await introBg.start("revealSite");
+    await setIntroActive(false);
+  }, [animateTitle, introBg]);
   useEffect(() => {
-    if(introActive){
-        introSequence()
+    if (introActive) {
+      introSequence();
     }
-  }, [])
+  }, [introActive, introSequence]);
   return (
-    <motion.div 
-    className={styles.intro__main}
-    animate={introBg}
-    variants={variants}
+    <motion.div
+      className={styles.intro__main}
+      animate={introBg}
+      variants={variants}
     >
       <div className={styles.comp__logo}>
         <img

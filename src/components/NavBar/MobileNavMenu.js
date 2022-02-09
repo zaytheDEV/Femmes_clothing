@@ -138,6 +138,13 @@ function MobileNavMenu(props) {
           >
             <span>sales</span>
           </Link>
+          <Link
+            onClick={closeNav}
+            to="/favorites"
+            style={{ color: "#000", textDecoration: "none" }}
+          >
+            <span>favorites</span>
+          </Link>
         </div>
         <span className={styles.companyName}>femmes clothing</span>
       </div>

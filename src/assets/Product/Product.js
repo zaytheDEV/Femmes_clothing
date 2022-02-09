@@ -1,16 +1,16 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./product.module.css";
 import { auth } from "../../firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFav } from "../../features/userFavoritesSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { alertUser } from "../../features/userAlertSlice";
 
 function Product(props) {
+  const dispatch = useDispatch();
   const heartSVG = useRef();
   const user = auth.currentUser;
   const favCheckbox = useRef();
   const favorites = useSelector((state) => state.favorites.favorites);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   //Add to Cart Features
   const newItem = {
@@ -38,7 +38,7 @@ function Product(props) {
   const removeFavorite = (favId) => {
     props.removeFromFavorites(favId);
   };
-  
+
   //user alert handler
   const favoriteHandler = (e) => {
     if (auth.currentUser) {
@@ -177,9 +177,7 @@ function Product(props) {
         <div className={styles.product__left}>
           <span className={styles.product__title}>{props.title}</span>
           <span className={styles.product__type}>{props.type}</span>
-          <span className={styles.product__type}>
-            {props.numberOfColors} color(s)
-          </span>
+          <span className={styles.product__type}>{props.colors} color(s)</span>
         </div>
         <div className={styles.product__right}>
           {props.newArrival && (
