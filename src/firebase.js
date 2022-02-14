@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDAWPxWiI-tu31vgkIONPlzdqwe3W9TdnM",
+  apiKey: "ENTER API KEY",
   authDomain: "femmes-app.firebaseapp.com",
   projectId: "femmes-app",
   storageBucket: "femmes-app.appspot.com",
