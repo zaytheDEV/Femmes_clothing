@@ -17,4 +17,15 @@ For the front-end of the website, I used the framework React along with SASS. Wi
 <b>Back-end Code</b>
 I am currently learning the back-end of web development, so the back-end portion of my app took the longest for me to debug and complete. I used Google’s API Firebase to collect and hold the user data. With this data base, the user can login and retrieve their saved favorites and cart items. The subtotal will either include or exclude the shipping fee depending on the users' login state. If the user is logged in, then the total price will exclude shipping costs. 
 
+<b>Features</b>
+<li>Create or log into account</li>
+<li>Add / remove items from favorites</li>
+<li>Add / remove items from cart</li>
+<li>Quick bag/cart feature</li>
+<li>promotional code</li>
+<li>Shipping fee voided or added</li>
+<li>Favorite items are marked throughout app</li>
+<li>User information saved</li>
+
+
 Enjoy :)
