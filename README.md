@@ -19,6 +19,7 @@ I am currently learning the back-end of web development, so the back-end portion
 
 <b>Features</b>
 <li>Create or log into account</li>
+<li>User authentication</li>
 <li>Add / remove items from favorites</li>
 <li>Add / remove items from cart</li>
 <li>Quick bag/cart feature</li>
