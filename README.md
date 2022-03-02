@@ -1,5 +1,15 @@
 # Femmes_clothing
 
+<b>Frameworks/Tools</b>
+<li>React</li>
+<li>JavaScript</li>
+<li>Redux</li>
+<li>Firebase</li>
+<li>SASS</li>
+<li>HTML</li>
+<li>Illustrator</li>
+<li>Adobe XD</li>
+
 Instructions for App
 1.	Go to login page and input a pseudo name, email, and password
 2.	Simply add items to your favorites or cart
@@ -15,7 +25,7 @@ Before the code I used Adobe XD to design a prototype or mock-up for the website
 For the front-end of the website, I used the framework React along with SASS. With SASS I was able to create global variables to style fonts and colors. The styling of the app also includes CSS modules which allowed me to style only the elements in the selected component. For the animations on the website, I used the library Framer-motion. This is a mobile ready and responsive website. For the cart, cart total, favorites, and quick cart, I used Redux to be able to access the items and cart total throughout the entire app. I wanted to include unique features for the web app like displaying the user’s first name in the Nav bar. The app also includes a “quick cart” feature which allows the user fast access to their carts’ current total amount. The user is now able to shop and view their subtotal without having to render the Cart page.
 
 <b>Back-end Code</b></br>
-I am currently learning the back-end of web development, so the back-end portion of my app took the longest for me to debug and complete. I used Google’s API Firebase to collect and hold the user data. With this data base, the user can login and retrieve their saved favorites and cart items. The subtotal will either include or exclude the shipping fee depending on the users' login state. If the user is logged in, then the total price will exclude shipping costs. 
+I used Google’s API Firebase to collect and hold the user data. With this database and user authentication, the user can log in and out of their account. Using the users unique ID for Firebase, I was able to retrieve and update the users favorites and cart items. Using array methods, I was able to map and filter the users favorites and cart items accordingly. The subtotal will either include or exclude the shipping fee depending on the users' login state. If the user is logged in, then the total price will exclude shipping costs. 
 
 <b>Features</b>
 <li>Create or log into account</li>
