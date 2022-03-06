@@ -1,7 +1,10 @@
 # Femmes_clothing
 
-View Project live
+View Project live</br>
 https://femmes-app.web.app/
+
+View my portfolio</br>
+https://zaythedev.com
 
 <b>Frameworks/Tools</b>
 <li>React</li>
